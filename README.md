@@ -10,6 +10,7 @@
 - Supports local auth and Google OAuth
 
 ## Project Structure
+
 auth-core/
 ├─ src/main/java/com/auth/core/
 │ ├─ AuthService.java
