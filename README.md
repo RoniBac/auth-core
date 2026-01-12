@@ -9,23 +9,6 @@
 - Ready for integration with Java backends (Spring Boot, Micronaut, etc.)
 - Supports local auth and Google OAuth
 
-## Project Structure
-
-auth-core/
-├─ src/main/java/com/auth/core/
-│ ├─ AuthService.java
-│ ├─ model/
-│ │ ├─ AuthRequest.java
-│ │ ├─ AuthResult.java
-│ │ └─ UserIdentity.java
-│ └─ providers/
-│ ├─ AuthProvider.java
-│ ├─ LocalAuthProvider.java
-│ └─ GoogleAuthProvider.java
-├─ src/test/java/com/auth/core/AuthServiceTest.java
-├─ pom.xml
-└─ README.md
-
 ## Usage
 
 Add as a Maven dependency (local repo):
@@ -36,18 +19,7 @@ Add as a Maven dependency (local repo):
   <version>1.0-SNAPSHOT</version>
 </dependency>
 
-## Initialize AuthService with providers:
 
-
-Map<AuthType, AuthProvider> providers = Map.of(
-    AuthType.LOCAL, new LocalAuthProvider(),
-    AuthType.GOOGLE, new GoogleAuthProvider()
-);
-AuthService authService = new AuthService(providers);
-AuthRequest request = new AuthRequest(AuthType.GOOGLE, "google-token", "user@gmail.com");
-AuthResult result = authService.authenticate(request);
-System.out.println("Authenticated: " + result.isAuthenticated());
-System.out.println("User email: " + result.getUser().getEmail());
 ## Testing
 ### Tests in AuthServiceTest.java validate:
 
